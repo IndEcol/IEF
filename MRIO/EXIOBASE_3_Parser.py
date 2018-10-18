@@ -142,9 +142,9 @@ def Check_Output_dir(args):
         outPath = args.outdir
     else:
         outPath = os.path.join(args.exio_dir, 'mat_matrices')
-        if not os.path.exists(outPath):
-            os.makedirs(outPath)
-            print("Created directory {}".format(outPath))
+    if not os.path.exists(outPath):
+        os.makedirs(outPath)
+        print("Created directory {}".format(outPath))
     return outPath
 
 def Read_file(path, index_columns=[0,1], column_names=[0,1]):
