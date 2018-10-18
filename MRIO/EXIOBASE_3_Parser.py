@@ -3,8 +3,13 @@
 Created on Fri May 11 15:08:47 2018
 @author: ghardadi
 
+Edited on Thu Oct 17 2018
+@author: arthur
 
-
+This script takes the raw EXIObase 3 files and parses them into
+numpy matrices that are then stored in a .mat binary file.
+Also calulates Z and L matrices (optional)
+For usage see EXIOBASE_3_parser --help
 """
 
 #%%
