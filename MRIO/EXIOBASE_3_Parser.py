@@ -91,7 +91,7 @@ def Main(args):
     
     #Calculate Stressor per Industry expenditure
     print("Calculating Stressor per industry S")
-    MRIO_S  = np.divide(MRIO_F, MRIO_X, where = MRIO_X!=0)#divides each row of F by X but only where X != 0 
+    MRIO_S  = np.divide(MRIO_F, MRIO_X, where = MRIO_X>0)#divides each row of F by X but only where X != 0 
     #(the i'th column of F i divided by the i'th element of X if the latter is not 0
     print("Done calculating S")
 
