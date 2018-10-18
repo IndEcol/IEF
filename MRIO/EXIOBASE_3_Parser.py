@@ -116,20 +116,20 @@ def Main(args):
              'EB3_RegionList':MRIO_Country}
 
     if args.include_Z == True and args.Leontief == True:
-        filestring = 'EXIOBASE_IO_incl_Z_L_Mon_49R_ITC'
+        filestring = 'EXIOBASE_IO_incl_Z_L_Mon_49R'
         mdict['EB3_L_ITC'] = MRIO_L
         mdict['EB3_Z_ITC'] = MRIO_Z
     elif args.include_Z == True:
-        filestring = 'EXIOBASE_IO_incl_Z_Mon_49R_ITC'
+        filestring = 'EXIOBASE_IO_incl_Z_Mon_49R'
         mdict['EB3_Z_ITC'] = MRIO_Z
     elif args.Leontief == True:
-        filestring = 'EXIOBASE_IO_incl_L_Mon_49R_ITC' 
+        filestring = 'EXIOBASE_IO_incl_L_Mon_49R' 
         mdict['EB3_L_ITC'] = MRIO_L
     else:
-        filestring = 'EXIOBASE_IO_Mon_49R_ITC'    
+        filestring = 'EXIOBASE_IO_Mon_49R'    
    
     outPath = Check_Output_dir(args)
-    Filestring_Matlab_out = os.path.join(outPath,filestring+'_{}.mat'.format(datetime.datetime.date(datetime.datetime.now())))
+    Filestring_Matlab_out = os.path.join(outPath,filestring+'_{}_{}.mat'.format(args.exio_dir[-3:],datetime.datetime.date(datetime.datetime.now())))
     scipy.io.savemat(Filestring_Matlab_out, mdict = mdict)
     
     print("Matrices saved to: {}".format(Filestring_Matlab_out))
