@@ -129,7 +129,7 @@ def Main(args):
         filestring = 'EXIOBASE_IO_Mon_49R'    
    
     outPath = Check_Output_dir(args)
-    Filestring_Matlab_out = os.path.join(outPath,filestring+'_{}_{}.mat'.format(args.exio_dir[-3:],datetime.datetime.date(datetime.datetime.now())))
+    Filestring_Matlab_out = os.path.join(outPath,filestring+'_{}_{}.mat'.format(args.exio_dir.rstrip("/")[-3:],datetime.datetime.date(datetime.datetime.now())))
     scipy.io.savemat(Filestring_Matlab_out, mdict = mdict)
     
     print("Matrices saved to: {}".format(Filestring_Matlab_out))
