@@ -69,6 +69,11 @@ def Main(args):
     MRIO_Industries = Read_file(Path, index_columns = [0], column_names=[0])
     MRIO_Industries = list(MRIO_Industries['Name'])
     
+    #read in Products
+    Path = os.path.join(mainPath,'products.txt')
+    print("Reading in Product names from:\n{}".format(Path))
+    MRIO_Products = Read_file(Path, index_columns = [0], column_names=[0])
+    MRIO_Products = list(MRIO_Products['Name'])
 
     #get countries from Y
     MRIO_Country = MRIO_Y_raw.index.get_level_values('region').unique() #Take all countries in the index
@@ -112,7 +117,7 @@ def Main(args):
              'EB3_Extensions_Units':MRIO_Funit,
              'EB3_FDCats':MRIO_FCat,
              'EB3_IndustryNames163':MRIO_Industries,
-             'EB3_ProductNames163':MRIO_Industries,
+             'EB3_ProductNames163':MRIO_Products,
              'EB3_RegionList':MRIO_Country}
 
     if args.include_Z == True and args.Leontief == True:
