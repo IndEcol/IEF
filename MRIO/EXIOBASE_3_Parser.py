@@ -76,7 +76,7 @@ def Main(args):
     MRIO_Products = list(MRIO_Products['Name'])
 
     #get countries from Y
-    MRIO_Country = MRIO_Y_raw.index.get_level_values('region').unique() #Take all countries in the index
+    MRIO_Country = np.array(MRIO_Y_raw.index.get_level_values('region').unique().values, dtype='str') #Take all countries in the index
     
     Nsize = MRIO_A.shape[0]
     #Calculate Leontief Inverse
