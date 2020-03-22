@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="df767929-6b54-4b5b-9045-11c043ad2aad" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1Z20c70tilotIHoAup8CPQDj9ZJ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../scripts/IEF/MRIO/EXIOBASE_3_Parser.py" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/CalcFootprints" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.Footprints">
+    <configuration name="CreateMatFiles" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PlanetaryBoundariesGroupWork" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/FileManaging" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FileManaging/CreateMatFiles.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Footprints" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PlanetaryBoundariesGroupWork" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CalcFootprints/Footprints.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.Footprints" />
+        <item itemvalue="Python.CreateMatFiles" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="df767929-6b54-4b5b-9045-11c043ad2aad" name="Default Changelist" comment="" />
+      <created>1584021957864</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584021957864</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="444" y="212" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584525771785">
+      <screen x="55" y="32" width="1865" height="1048" />
+    </state>
+    <state x="444" y="212" key="#com.intellij.execution.impl.EditConfigurationsDialog/55.32.1865.1048@55.32.1865.1048" timestamp="1584525771785" />
+    <state x="643" y="267" width="624" height="551" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1584023945180">
+      <screen x="0" y="32" width="1920" height="1048" />
+    </state>
+    <state x="643" y="267" width="624" height="551" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/1920.0.1600.900/0.32.1920.1048@0.32.1920.1048" timestamp="1584023945180" />
+    <state x="777" y="297" width="424" height="491" key="FileChooserDialogImpl" timestamp="1584442231290">
+      <screen x="55" y="32" width="1865" height="1048" />
+    </state>
+    <state x="743" y="297" width="424" height="491" key="FileChooserDialogImpl/1920.0.1600.900/0.32.1920.1048@0.32.1920.1048" timestamp="1584022762721" />
+    <state x="777" y="297" key="FileChooserDialogImpl/55.32.1865.1048@55.32.1865.1048" timestamp="1584442231290" />
+    <state width="1840" height="210" key="GridCell.Tab.0.bottom" timestamp="1584882145011">
+      <screen x="55" y="32" width="1865" height="1048" />
+    </state>
+    <state width="1897" height="211" key="GridCell.Tab.0.bottom/0.32.3520.1048@0.32.3520.1048" timestamp="1584819490560" />
+    <state width="1897" height="276" key="GridCell.Tab.0.bottom/1920.0.1600.900/0.32.1920.1048@0.32.1920.1048" timestamp="1584024397714" />
+    <state width="1840" height="210" key="GridCell.Tab.0.bottom/55.32.1865.1048@55.32.1865.1048" timestamp="1584882145011" />
+    <state width="1840" height="210" key="GridCell.Tab.0.center" timestamp="1584882145010">
+      <screen x="55" y="32" width="1865" height="1048" />
+    </state>
+    <state width="1897" height="211" key="GridCell.Tab.0.center/0.32.3520.1048@0.32.3520.1048" timestamp="1584819490558" />
+    <state width="1897" height="276" key="GridCell.Tab.0.center/1920.0.1600.900/0.32.1920.1048@0.32.1920.1048" timestamp="1584024397714" />
+    <state width="1840" height="210" key="GridCell.Tab.0.center/55.32.1865.1048@55.32.1865.1048" timestamp="1584882145010" />
+    <state width="1840" height="210" key="GridCell.Tab.0.left" timestamp="1584882145009">
+      <screen x="55" y="32" width="1865" height="1048" />
+    </state>
+    <state width="1897" height="211" key="GridCell.Tab.0.left/0.32.3520.1048@0.32.3520.1048" timestamp="1584819490557" />
+    <state width="1897" height="276" key="GridCell.Tab.0.left/1920.0.1600.900/0.32.1920.1048@0.32.1920.1048" timestamp="1584024397714" />
+    <state width="1840" height="210" key="GridCell.Tab.0.left/55.32.1865.1048@55.32.1865.1048" timestamp="1584882145009" />
+    <state width="1840" height="210" key="GridCell.Tab.0.right" timestamp="1584882145011">
+      <screen x="55" y="32" width="1865" height="1048" />
+    </state>
+    <state width="1897" height="211" key="GridCell.Tab.0.right/0.32.3520.1048@0.32.3520.1048" timestamp="1584819490559" />
+    <state width="1897" height="276" key="GridCell.Tab.0.right/1920.0.1600.900/0.32.1920.1048@0.32.1920.1048" timestamp="1584024397714" />
+    <state width="1840" height="210" key="GridCell.Tab.0.right/55.32.1865.1048@55.32.1865.1048" timestamp="1584882145011" />
+    <state width="1842" height="328" key="GridCell.Tab.1.bottom" timestamp="1584874624424">
+      <screen x="55" y="32" width="1865" height="1048" />
+    </state>
+    <state width="1842" height="328" key="GridCell.Tab.1.bottom/55.32.1865.1048@55.32.1865.1048" timestamp="1584874624424" />
+    <state width="1842" height="328" key="GridCell.Tab.1.center" timestamp="1584874624423">
+      <screen x="55" y="32" width="1865" height="1048" />
+    </state>
+    <state width="1842" height="328" key="GridCell.Tab.1.center/55.32.1865.1048@55.32.1865.1048" timestamp="1584874624423" />
+    <state width="1842" height="328" key="GridCell.Tab.1.left" timestamp="1584874624422">
+      <screen x="55" y="32" width="1865" height="1048" />
+    </state>
+    <state width="1842" height="328" key="GridCell.Tab.1.left/55.32.1865.1048@55.32.1865.1048" timestamp="1584874624422" />
+    <state width="1842" height="328" key="GridCell.Tab.1.right" timestamp="1584874624423">
+      <screen x="55" y="32" width="1865" height="1048" />
+    </state>
+    <state width="1842" height="328" key="GridCell.Tab.1.right/55.32.1865.1048@55.32.1865.1048" timestamp="1584874624423" />
+    <state x="626" y="98" width="1024" height="737" key="SettingsEditor" timestamp="1584706319865">
+      <screen x="55" y="32" width="1865" height="1048" />
+    </state>
+    <state x="588" y="98" width="1022" height="737" key="SettingsEditor/1920.0.1600.900/0.32.1920.1048@0.32.1920.1048" timestamp="1584023056045" />
+    <state x="626" y="98" width="1024" height="737" key="SettingsEditor/55.32.1865.1048@55.32.1865.1048" timestamp="1584706319865" />
+    <state x="653" y="367" key="com.intellij.ide.util.TipDialog" timestamp="1584360444790">
+      <screen x="55" y="32" width="1865" height="1048" />
+    </state>
+    <state x="616" y="367" key="com.intellij.ide.util.TipDialog/1920.0.1600.900/0.32.1920.1048@0.32.1920.1048" timestamp="1584021983511" />
+    <state x="653" y="367" key="com.intellij.ide.util.TipDialog/55.32.1865.1048@55.32.1865.1048" timestamp="1584360444790" />
+    <state x="765" y="244" width="664" height="804" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584868651638">
+      <screen x="55" y="32" width="1865" height="1048" />
+    </state>
+    <state x="998" y="244" width="664" height="804" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.32.3520.1048@0.32.3520.1048" timestamp="1584803109612" />
+    <state x="765" y="244" width="488" height="643" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/55.32.1865.1048@55.32.1865.1048" timestamp="1584868651638" />
+    <state x="650" y="262" width="672" height="678" key="search.everywhere.popup" timestamp="1584829549621">
+      <screen x="55" y="32" width="1865" height="1048" />
+    </state>
+    <state x="650" y="262" width="672" height="678" key="search.everywhere.popup/55.32.1865.1048@55.32.1865.1048" timestamp="1584829549621" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/FileManaging/CreateMatFiles.py</url>
+          <line>13</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
