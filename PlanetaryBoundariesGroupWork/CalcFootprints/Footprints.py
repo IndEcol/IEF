@@ -78,6 +78,8 @@ def Footprints(args):
 
     print(time_series_df)
     time_series_df.reset_index(inplace=True)
+    # Remove trailing white spaces from Emissions column
+    time_series_df['Emission'] = time_series_df['Emission'].str.strip()
     print(time_series_df.columns)
     time_series_df.to_feather(os.path.join(outPath,'TimeSeries.feather'))
 
