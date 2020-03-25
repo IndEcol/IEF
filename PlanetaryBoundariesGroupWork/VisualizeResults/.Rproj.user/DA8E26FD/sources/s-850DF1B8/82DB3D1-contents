@@ -1,0 +1,56 @@
+#' 
+#' 
+#'  
+#' @author Simon Schulte
+#' Date: 2020-03-23 09:43:49
+#' 
+#' Content:
+#'  
+
+
+############################################################################## # 
+##### load packages ############################################################
+############################################################################## # 
+
+library(data.table)
+library(tidyverse)
+library(my.utils)
+library(feather)
+library(plotly)
+############################################################################## # 
+##### settings #################################################################
+############################################################################## # 
+
+
+# Plots ------------------------------------------------------------------------
+# 1. ggplot -------------------------------------------------------------------
+data[Emission == "co2 - combustion - air", .(value = sum(value)),
+     by = .(Region, Accounting, year)] %>% 
+  ggplot(aes(x = year, y = value, col = Region)) + 
+  geom_line(aes(linetype = Accounting))
+
+p <- data[Emission == "co2 - combustion - air", .(value = sum(value)),
+     by = .(Region, Accounting, year)] %>%
+  dcast(Region + year ~ Accounting) %>% 
+  .[, "rel_diff" := (Consumption - Territorial) / Territorial] %>%
+  ggplot(aes(x = year, y = rel_diff, col = Region)) + 
+  geom_line()
+ggplotly(p)
+
+p <- data[Emission == "co2 - combustion - air" & year == 2011, 
+          .(value = sum(value)),
+     by = .(Region, Accounting)] %>%
+  ggplot(aes(x = as.factor(Region), y = value, col = Accounting)) + 
+  geom_point()
+plotly::ggplotly(p)
+
+p <- ggplot(data_fp, aes(x = year, y = value, col = Region)) + 
+              geom_line(aes(linetype = Type)) + 
+  facet_wrap(~Emission, scales = "free_y")
+plotly::ggplotly(p)
+
+# 2. interactive ---------------------------------------------------------------
+
+
+
+# THE END ---------------------------------------------------------------------

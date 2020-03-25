@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1585131954030.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "A3ED2564",
+    "lastKnownWriteTime" : 1585132286,
+    "last_content_update" : 1585132286777,
+    "path" : "~/Documents/Projects/IEF/PlanetaryBoundariesGroupWork/VisualizeResults/./prepare_data.R",
+    "project_path" : "./prepare_data.R",
+    "properties" : {
+        "cursorPosition" : "56,51",
+        "scrollLine" : "44"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
