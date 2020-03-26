@@ -54,9 +54,9 @@ def Footprints(args):
         footprints = np.empty((N_regions, data['S'].shape[0], data['L'].shape[1]))
         print('Calculating consumption based footprints...')
         for country_index in range(N_regions):
-            footprints[country_index,:,:] = CalFootprints(data['S'],data['L'],FD_by_country[:,country_index])
+            footprints[country_index,:,:] = CalFootprints(np.nan_to_num(data['S']),data['L'],FD_by_country[:,country_index])
         print('Calculating territorial footprints...')
-        footprints_total = CalFootprints(data['S'],data['L'],FD_total)
+        footprints_total = CalFootprints(np.nan_to_num(data['S']),data['L'],FD_total)
         N_prod = len(data['productNames'])
         footprints_dom_import = np.zeros((N_regions, data['S'].shape[0], 2))
         footprints_ter = np.zeros((N_regions,data['S'].shape[0]))
@@ -81,7 +81,10 @@ def Footprints(args):
     # Remove trailing white spaces from Emissions column
     time_series_df['Emission'] = time_series_df['Emission'].str.strip()
     print(time_series_df.columns)
-    time_series_df.to_feather(os.path.join(outPath,'TimeSeries.feather'))
+    outFilePath = os.path.join(outPath,'TimeSeries.feather')
+    print('Writing data frame to {}'.format(outFilePath))
+    time_series_df.to_feather(outFilePath)
+
 
 
     print("\n Done {}\n".format(time.ctime()))
@@ -94,7 +97,11 @@ def CalFootprints(S,L,Y):
     L: Leontief Inverse Matrix
     Y: Final Demand Vector
     S: Stressor Matrix'''
-    return S.dot(np.diag(L.dot(Y)))
+    # split out the multiplication because dot is fast, but using np.diag
+    # is very very slow einsum in this case is much faster
+    x = L.dot(Y)
+    footprints = np.einsum('ij,j->ij',S,x)
+    return footprints
 
 
 
@@ -103,7 +110,7 @@ def Check_Output_dir(args):
     if args.outdir:
         outPath = args.outdir
     else:
-        outPath = os.path.join(args.exio_dir, 'constant_prices', 'mat_matrices')
+        outPath = os.path.join(args.exio_dir, 'feather_file')
     if not os.path.exists(outPath):
         os.makedirs(outPath)
         print("Created directory {}".format(outPath))
@@ -133,15 +140,15 @@ def ParseArgs():
     parser = argparse.ArgumentParser()
 
     parser.add_argument("-d", "--dir", type=str, dest='exio_dir',
-                        default="/media/jakobs/IEF Backups Arth/EB36/constant_prices/mat_matrices/",
+                        #default="/media/jakobs/IEF Backups Arth/EB36/constant_prices/mat_matrices/",
+                        default="/home/jakobs/data/PlanetaryBoundariesGroupWork/current_price/",
                         help="Directory containing the time series mat files for EXIOBASE.")
 
     parser.add_argument("-o", "--outdir", type=str, dest='outdir',
-                        default='/home/jakobs/Documents/IndEcol/Data/PlanetaryBoundariesGroupWork/',
+                        default=None,
                         help="Optional dir for output. Otherwise saved in subfolder in  input dir")
     parser.add_argument("-a", "--author", type=str, dest="author", default=getpass.getuser(),
                         help="Give the author name of the person running the script. Default is computer user.")
-
     args = parser.parse_args()
 
     print("Arguments parsed.")

@@ -18,6 +18,7 @@ import argparse
 import time
 import getpass
 import datatable as dt
+import numpy as np
 
 
 def MakeDataDicts(args):
@@ -28,13 +29,16 @@ def MakeDataDicts(args):
     be added later on"""
 
     maindir = args.exio_dir
-    subpath = 'constant_prices'
-    # Get the folder names for the different years.
-    data_dirs = GetSubDirs(os.path.join(maindir, subpath))
+    if args.constant_price:  # Use constant price data from sub dir
+        subpath = 'constant_prices'
+        # Get the folder names for the different years.
+        data_dirs = GetSubDirs(os.path.join(maindir, subpath))
+    else:  # Use current price data from main dair
+        data_dirs = GetSubDirs(maindir)
     data_dirs.sort()  # sort for right order
 
     year_dirs = [os.path.basename(x) for x in data_dirs]
-    year_dirs = [x for x in year_dirs if len(x.split('_')) == 3]  # this check is in case there is another
+    year_dirs = [x for x in year_dirs if len(x.split('_')) == 3 and x.split('_')[0]=='IOT']  # this check is in case there is another
                                                                   # folder in the directory, such as the outdir
     # Create output directory
     outPath = Check_Output_dir(args)
@@ -49,7 +53,10 @@ def MakeDataDicts(args):
 
     for year_dir,data_dir in zip(year_dirs,data_dirs):
         print('Processing year {}'.format(year_dir.split('_')[1]))
-        x,L,S,Y = Read_Data(data_dir)  # should be 2011
+        if args.constant_price:
+            x,L,S,Y = Read_Constant_Price_Data(data_dir)  # should be 2011
+        else:
+            x,L,S,Y = Read_Current_Price_Data(data_dir)
         #x,L,S,Y = 0,0,0,0
         Final_Demand_Categories, Emission_Categories, \
         Direct_Emissions, Regions, productNames, productCodes, \
@@ -70,7 +77,11 @@ def MakeDataDicts(args):
                 }
 
         print('Writing matrices as dictionary...')
-        filestring = 'exiobase_constant_price_{}.mat'.format(year_dir.split('_')[1])
+        if args.constant_price:
+            flag = 'constant'
+        else:
+            flag = 'current'
+        filestring = 'exiobase_{}_price_{}.mat'.format(flag,year_dir.split('_')[1])
         Filestring_Matlab_out = os.path.join(outPath, filestring)
         savemat(Filestring_Matlab_out, mdict=dict)
 
@@ -84,18 +95,22 @@ def Check_Output_dir(args):
     if args.outdir:
         outPath = args.outdir
     else:
-        outPath = os.path.join(args.exio_dir, 'constant_prices', 'mat_matrices')
+        if args.constant_price:
+            outPath = os.path.join(args.exio_dir, 'constant_prices', 'mat_matrices')
+        else:
+            outPath = os.path.join(args.exio_dir, 'mat_matrices')
     if not os.path.exists(outPath):
         os.makedirs(outPath)
         print("Created directory {}".format(outPath))
     return outPath
 
 
-def Read_Data(dir):
+def Read_Constant_Price_Data(dir):
     """Read in the constant price data from the csv tables.
     (These do not contain headers or row indices at this point)"""
     #data_files = GetSubDirs(dir)
     #data_files.sort()
+    print("Reading constant price data")
     print('Reading in L...')
     L = dt.fread(os.path.join(dir, 'L.txt'), sep=',', header=None).to_numpy()
     print('Reading in S...')
@@ -105,6 +120,31 @@ def Read_Data(dir):
     print('Reading in x...')
     x = dt.fread(os.path.join(dir, 'x.txt'), sep=',', header=None).to_numpy()
     return x,L,S,Y
+
+
+def Read_Current_Price_Data(dir):
+    """Read in the constant price data from the csv tables.
+    (These do not contain headers or row indices at this point)"""
+    #data_files = GetSubDirs(dir)
+    #data_files.sort()
+    print("Reading current price data")
+    print('Reading in L...')
+    L = dt.fread(os.path.join(dir, 'L.txt'), sep=',', header=None).to_numpy()
+    print('Reading in F...')
+    F = dt.fread(os.path.join(dir,'satellite', 'F.txt'), sep='\t', skip_to_line=26)[:,1:].to_numpy()
+    print('Reading in Y...')
+    Y = dt.fread(os.path.join(dir, 'Y.txt'), sep='\t', skip_to_line=4)[:,2:].to_numpy()
+    print('Reading in x...')
+    x = dt.fread(os.path.join(dir, 'x.txt'), sep=',', header=None).to_numpy()
+    #print('Calculating x...')
+    #FD_indices = np.array([np.arange(0,343,7),np.arange(1,343,7),np.arange(2,343,7),np.arange(3,343,7)]).T.flatten()
+    #Ytotal = Y[:, FD_indices].sum(axis=1)
+    #x = L.dot(Ytotal)
+
+    print('Calculating S...')
+    S = np.divide(F,x.T,where=x.T>0)
+    return x,L,S,Y
+
 
 def Get_Direct_emission_data(datadir, subdir):
     """Read in the Direct emission data as well as the
@@ -154,7 +194,8 @@ def ParseArgs():
                         help="Optional dir for output. Otherwise saved in subfolder in  input dir")
     parser.add_argument("-a", "--author", type=str, dest="author", default=getpass.getuser(),
                         help="Give the author name of the person running the script. Default is computer user.")
-
+    parser.add_argument("-c", "--constant", action="store_true", dest='constant_price',
+                        help="If flag is passed, will use the constant price data")
     args = parser.parse_args()
 
     print("Arguments parsed.")
