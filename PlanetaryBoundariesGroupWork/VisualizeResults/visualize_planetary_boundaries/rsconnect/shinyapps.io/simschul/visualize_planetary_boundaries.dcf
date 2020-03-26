@@ -1,0 +1,12 @@
+name: visualize_planetary_boundaries
+title: visualize_planetary_boundaries
+username:
+account: simschul
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 1981763
+bundleId: 2921897
+url: https://simschul.shinyapps.io/visualize_planetary_boundaries/
+when: 1585131074.21642
+asMultiple: FALSE
+asStatic: FALSE
