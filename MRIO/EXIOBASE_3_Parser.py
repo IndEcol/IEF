@@ -107,23 +107,25 @@ def Main(args):
     
     ### Write to mat file:
     print("Saving matrices to file...")
-    mdict = {'EB3_FinalDemand_Emissions':MRIO_Fhh,
-             'EB3_A_ITC':MRIO_A,
-             'EB3_S_ITC':MRIO_S, 
-             'EB3_Y':MRIO_Y,
-             'EB3_TableUnits':'MEUR',
-             'EB3_Extensions':MRIO_Funit,
-             'EB3_Extensions_Labels':MRIO_Ftype,
-             'EB3_Extensions_Units':MRIO_Funit,
-             'EB3_FDCats':MRIO_FCat,
-             'EB3_IndustryNames163':MRIO_Industries,
-             'EB3_ProductNames163':MRIO_Products,
-             'EB3_RegionList':MRIO_Country}
+    mdict = {'FinalDemand_Emissions':MRIO_Fhh,
+             'A_ITC':MRIO_A,
+             'S_ITC':MRIO_S,
+             'Y':MRIO_Y,
+             'E':MRIO_F,
+             'x':MRIO_X,
+             'TableUnits':'MEUR',
+             'Extensions':MRIO_Funit,
+             'Extensions_Labels':MRIO_Ftype,
+             'Extensions_Units':MRIO_Funit,
+             'FDCats':MRIO_FCat,
+             'IndustryNames':MRIO_Industries,
+             'ProductNames':MRIO_Products,
+             'RegionList':MRIO_Country}
 
     if args.include_Z == True and args.Leontief == True:
         filestring = 'EXIOBASE_IO_incl_Z_L_Mon_49R'
-        mdict['EB3_L_ITC'] = MRIO_L
-        mdict['EB3_Z_ITC'] = MRIO_Z
+        mdict['L_ITC'] = MRIO_L
+        mdict['Z_ITC'] = MRIO_Z
     elif args.include_Z == True:
         filestring = 'EXIOBASE_IO_incl_Z_Mon_49R'
         mdict['EB3_Z_ITC'] = MRIO_Z
