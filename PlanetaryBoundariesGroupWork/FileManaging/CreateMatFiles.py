@@ -22,7 +22,7 @@ import numpy as np
 
 
 def MakeDataDicts(args):
-    """This function reads the constant price EXIOBASE data and
+    """This function reads the constant/current price EXIOBASE data and
     creates a time series of binary .mat files containing dictionaries
     of with the relevant information for footprint calculation.
     The A and Z matrices are not included. This functionality could
